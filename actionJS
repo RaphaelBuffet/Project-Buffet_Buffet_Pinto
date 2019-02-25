@@ -1,0 +1,65 @@
+// Create the canvas
+var canvas = document.createElement("canvas");
+var ctx = canvas.getContext("2d");
+canvas.width = 512;
+canvas.height = 480;
+document.body.appendChild(canvas);
+
+// Game objects
+var player = {
+	speed: 128, // movement speed in pixels per second
+	x: 0,
+	y: 0
+};
+var ennemy = {
+    speed: 128 //movement speed in pixels per second
+	x: 0,
+	y: 0
+};
+var bomb = {
+    x: 0,
+    y: 0,
+    powerX: 96 // number of pixel in the bomb explod
+    powerY: 96 // number of pixel in the bomb explod
+    time :3 //time in second that the bomb stay before explode
+};
+var fire ={
+
+}
+
+var ally = {
+    speed: 128 movement speed in pixels per second
+    x: 0,
+    y: 0
+};
+
+var wall ={
+    x: 0,
+    y: 0
+}
+
+// Handle keyboard controls
+var keysDown = {};
+
+addEventListener("keydown", function (e) {
+	keysDown[e.keyCode] = true;
+}, false);
+
+addEventListener("keyup", function (e) {
+	delete keysDown[e.keyCode];
+}, false);
+
+// Reset the game when the player die
+var reset = function () {
+	player.x = canvas.width / 2;
+	player.y = canvas.height / 2;
+    
+// place a bomb at the location from player
+var place = function () {
+    bomb.x=player.x;
+    bomb.y=player.y;
+}
+// explosion of the bomb effect
+var explosion = function() {
+    
+}
